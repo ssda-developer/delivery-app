@@ -16,7 +16,6 @@ const CardItem = ({food = {}, isShowCount = false}) => {
 
     const removeHandler = () => {
         removeCartsData(food);
-        console.log(cartsData);
     };
 
     const changePrice = ({target}) => {
