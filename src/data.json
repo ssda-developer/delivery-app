@@ -1,0 +1,63 @@
+{
+    "restaurants": [
+        {
+            "id": "5c342ac9fc13ae39f8000000",
+            "name": "The Burger Bar by Fatboy's Concepts (Boat Quay)",
+            "address": "35 Boat Quay, 049824 Singapore",
+            "openingTime": "11:00",
+            "closingTime": "22:30",
+            "foods": [
+                {
+                    "id": "111",
+                    "name": "Burger 1",
+                    "image": "https://picsum.photos/id/1/480/320",
+                    "price": "111"
+                },
+                {
+                    "id": "112",
+                    "name": "Burger 2",
+                    "image": "https://picsum.photos/id/2/480/320",
+                    "price": "112"
+                },
+                {
+                    "id": "113",
+                    "name": "Burger 3",
+                    "image": "https://picsum.photos/id/3/480/320",
+                    "price": "113"
+                }
+            ],
+            "imageUrl": "images/restaurants/5c342ac9fc13ae39f8000000.jpg",
+            "averagePrice": 25
+        },
+        {
+            "id": "5c342ac9fc13ae39f8000001",
+            "name": "The Soup Spoon (Tanjong Pagar Exchange)",
+            "address": "120 Maxwell Road, Tanjong Pagar Xchange, B1-31, 069119 Singapore",
+            "openingTime": "12:00",
+            "closingTime": "21:30",
+            "foods": [
+                {
+                    "id": "222",
+                    "name": "Title2"
+                }
+            ],
+            "imageUrl": "images/restaurants/5c342ac9fc13ae39f8000001.jpg",
+            "averagePrice": 12
+        },
+        {
+            "id": "5c342ac9fc13ae39f8000002",
+            "name": "Subway (Chinatown Point)",
+            "address": "133 New Bridge Road, #B1-37 Chinatown Point, 059413 Singapore",
+            "openingTime": "10:00",
+            "closingTime": "21:30",
+            "foods": [
+                {
+                    "id": "333",
+                    "name": "Title3"
+                }
+            ],
+            "imageUrl": "images/restaurants/5c342ac9fc13ae39f8000002.jpg",
+            "averagePrice": 10
+        }
+    ]
+}
