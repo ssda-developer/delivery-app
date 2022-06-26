@@ -14,7 +14,7 @@ export const StoreProvider = ({children}) => {
         setFoodsData(value);
     }
 
-    const [currentShopsId, setCurrentShopsId] = useState(shopsData[0]);
+    const [currentShopsId, setCurrentShopsId] = useState(shopsData[0].id);
     const updateCurrentShopsId = value => {
         setCurrentShopsId(value);
     }

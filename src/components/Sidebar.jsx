@@ -15,7 +15,7 @@ const Sidebar = () => {
     return (
         <aside>
             <h5>Shops:</h5>
-            <ListGroup defaultActiveKey={'#link' + currentShopsId.id}>
+            <ListGroup defaultActiveKey={'#link' + currentShopsId}>
                 {
                     shopsData.map(shop => {
                         const isDisabled = currentShopsId !== shop.id && shoppingList.length;
