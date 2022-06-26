@@ -5,7 +5,8 @@ import Header from './components/Header';
 import { Container } from 'react-bootstrap';
 
 function App() {
-    return (<div className="app">
+    return (
+        <div className="app">
             <Header/>
             <Container className="py-4">
                 <Routes>
@@ -13,7 +14,8 @@ function App() {
                     <Route path="/shopping-list-page" element={<ShoppingListPage/>}/>
                 </Routes>
             </Container>
-        </div>);
+        </div>
+    );
 }
 
 export default App;

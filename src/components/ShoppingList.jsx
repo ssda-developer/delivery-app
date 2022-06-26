@@ -1,6 +1,6 @@
 import { useContext, useEffect } from 'react';
 import FoodCard from './FoodCard';
-import { Row, Col, Container } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 import StoreContext from '../context/StoreContext';
 
 const ShoppingList = () => {
@@ -12,34 +12,30 @@ const ShoppingList = () => {
         updateTotalPrice(total);
     }, [shoppingList, updateTotalPrice]);
 
-    return (
-        <Container>
-            {
-                shoppingList.length
-                    ? <>
-                        <Row>
-                            {
-                                shoppingList.map(food => {
-                                    return (
-                                        <Col md={6} key={food.id}>
-                                            <FoodCard isShowCount={true} food={food}/>
-                                        </Col>
-                                    )
-                                })
-                            }
-                        </Row>
-                        <Row className="mt-2">
-                            <Col sm={12}>
-                                Total: {totalPrice}
+
+    return shoppingList.length
+        ? <>
+            <Row>
+                {
+                    shoppingList.map(food => {
+                        return (
+                            <Col md={6} key={food.id}>
+                                <FoodCard isShowCount={true} food={food}/>
                             </Col>
-                        </Row>
-                    </>
-                    : <div className="alert alert-secondary" role="alert">
-                        You have not added any items to your shopping list yet.
-                    </div>
-            }
-        </Container>
-    );
+                        )
+                    })
+                }
+            </Row>
+            <Row className="mt-2">
+                <Col sm={12}>
+                    Total: {totalPrice.toFixed(2)}$
+                </Col>
+            </Row>
+        </>
+        : <div className="alert alert-secondary" role="alert">
+            You have not added any items to your shopping list yet.
+        </div>
+
 };
 
 export default ShoppingList;

@@ -9,7 +9,7 @@ const ShoppingListPage = () => {
 
     return (
         <Row>
-            <Col lg="6">
+            <Col lg="6" className="mb-3">
                 <UserForm/>
             </Col>
             <Col lg="6">

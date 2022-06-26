@@ -5,7 +5,7 @@ import { Col, Row } from 'react-bootstrap';
 const ShopsPage = () => {
     return (
         <Row>
-            <Col lg="4">
+            <Col lg="4" className="mb-3">
                 <Sidebar/>
             </Col>
             <Col lg="8">

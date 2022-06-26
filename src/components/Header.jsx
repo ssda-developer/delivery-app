@@ -7,6 +7,7 @@ const Header = () => {
             <Navbar bg="light" expand="lg">
                 <Container>
                     <Navbar.Brand href="/">Delivery App</Navbar.Brand>
+                    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
                             <LinkContainer to="/">
