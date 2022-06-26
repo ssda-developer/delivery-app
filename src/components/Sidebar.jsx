@@ -1,37 +1,31 @@
 import { ListGroup } from 'react-bootstrap';
-import CartsContext from '../context/CartsContext';
-import { useContext, useEffect } from 'react';
+import { useContext } from 'react';
+import StoreContext from '../context/StoreContext';
 
-const Sidebar = ({activeLink, updateFoods, restaurants}) => {
-    const { cartsData, setCurrentRestaurant, restaurantData } = useContext(CartsContext);
+const Sidebar = () => {
+    const {
+        shoppingList, shopsData, currentShopsId, updateFoods, updateCurrentShopsId
+    } = useContext(StoreContext);
 
-    const clickHandler = (el) => {
-        updateFoods(el.foods);
-        setCurrentRestaurant(el.id);
+    const clickHandler = shop => {
+        updateFoods(shop.foods);
+        updateCurrentShopsId(shop.id);
     };
-
-    const qwe = restaurantData.length ? restaurantData : restaurants[0].id;
-    const [ttt] = restaurants.filter(el => el.id === qwe);
-
-    useEffect(() => {
-        updateFoods(ttt.foods);
-    });
-
-    console.log(qwe);
 
     return (
         <aside>
-            <h2>Shops:</h2>
-            <ListGroup defaultActiveKey={'#link' + qwe}>
+            <h5>Shops:</h5>
+            <ListGroup defaultActiveKey={'#link' + currentShopsId.id}>
                 {
-                    restaurants.map((el, idx) => {
+                    shopsData.map(shop => {
+                        const isDisabled = currentShopsId !== shop.id && shoppingList.length;
                         return (
                             <ListGroup.Item action
-                                            disabled={restaurantData !== el.id && cartsData.length}
-                                            key={idx}
-                                            href={'#link' + el.id}
-                                            onClick={() => clickHandler(el)}>
-                                {el.name}
+                                            key={shop.id}
+                                            disabled={isDisabled}
+                                            href={'#link' + shop.id}
+                                            onClick={() => clickHandler(shop)}>
+                                {shop.name}
                             </ListGroup.Item>
                         )
                     })

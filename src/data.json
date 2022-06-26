@@ -1,5 +1,5 @@
 {
-    "restaurants": [
+    "shops": [
         {
             "id": "5c342ac9fc13ae39f8000000",
             "name": "The Burger Bar by Fatboy's Concepts (Boat Quay)",
@@ -26,7 +26,7 @@
                     "price": "113"
                 }
             ],
-            "imageUrl": "images/restaurants/5c342ac9fc13ae39f8000000.jpg",
+            "imageUrl": "images/shopsData/5c342ac9fc13ae39f8000000.jpg",
             "averagePrice": 25
         },
         {
@@ -41,7 +41,7 @@
                     "name": "Title2"
                 }
             ],
-            "imageUrl": "images/restaurants/5c342ac9fc13ae39f8000001.jpg",
+            "imageUrl": "images/shopsData/5c342ac9fc13ae39f8000001.jpg",
             "averagePrice": 12
         },
         {
@@ -56,7 +56,7 @@
                     "name": "Title3"
                 }
             ],
-            "imageUrl": "images/restaurants/5c342ac9fc13ae39f8000002.jpg",
+            "imageUrl": "images/shopsData/5c342ac9fc13ae39f8000002.jpg",
             "averagePrice": 10
         }
     ]

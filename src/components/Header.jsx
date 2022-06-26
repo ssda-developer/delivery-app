@@ -1,10 +1,9 @@
-import React from 'react';
-import { Container, Nav, Navbar } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap'
+import { Container, Nav, Navbar } from 'react-bootstrap';
 
 const Header = () => {
     return (
-        <header className="mb-4">
+        <header className="bg-white border-bottom box-shadow">
             <Navbar bg="light" expand="lg">
                 <Container>
                     <Navbar.Brand href="/">Delivery App</Navbar.Brand>
@@ -13,8 +12,8 @@ const Header = () => {
                             <LinkContainer to="/">
                                 <Nav.Link>Shops page</Nav.Link>
                             </LinkContainer>
-                            <LinkContainer to="/shopping-cart-page">
-                                <Nav.Link>Shopping cart page</Nav.Link>
+                            <LinkContainer to="/shopping-list-page">
+                                <Nav.Link>Shopping list page</Nav.Link>
                             </LinkContainer>
                         </Nav>
                     </Navbar.Collapse>
