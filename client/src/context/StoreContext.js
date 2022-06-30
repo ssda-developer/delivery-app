@@ -1,5 +1,4 @@
 import { createContext, useState } from 'react';
-import data from '../data.json';
 
 const StoreContext = createContext({});
 
@@ -14,7 +13,7 @@ export const StoreProvider = ({children}) => {
         setFoodsData(value);
     }
 
-    const [currentShopsId, setCurrentShopsId] = useState('1');
+    const [currentShopsId, setCurrentShopsId] = useState('');
     const updateCurrentShopsId = value => {
         setCurrentShopsId(value);
     }

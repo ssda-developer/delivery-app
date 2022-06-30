@@ -43,7 +43,7 @@ const FoodCard = ({ food, isShowCount = false }) => {
 
     return (
         <Card className="mb-4">
-            <Card.Img variant="top" src={food.image}/>
+            <Card.Img variant="top" src={food.imageUrl}/>
             <Card.Body>
                 <Card.Title>{food.name}</Card.Title>
                 <Card.Text>Price: {parseFloat(isShowCount ? price : food.price).toFixed(2)}$</Card.Text>

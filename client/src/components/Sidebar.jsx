@@ -1,11 +1,11 @@
 import { ListGroup } from 'react-bootstrap';
-import { useContext, useEffect } from 'react';
+import { useContext } from 'react';
 import StoreContext from '../context/StoreContext';
-import { getFoods, getShops } from '../axios';
+import { getFoods } from '../services/service';
 
 const Sidebar = () => {
     const {
-        shoppingList, shopsData, currentShopsId, updateShop, updateFoods, updateCurrentShopsId
+        shoppingList, shopsData, currentShopsId, updateFoods, updateCurrentShopsId
     } = useContext(StoreContext);
 
     const clickHandler = shopId => {
@@ -17,7 +17,7 @@ const Sidebar = () => {
 
     return (
         <aside>
-            <h5>Shops: {currentShopsId}</h5>
+            <h5>Shops:</h5>
             <ListGroup defaultActiveKey={'#link' + currentShopsId}>
                 {
                     shopsData.map((shop, idx) => {

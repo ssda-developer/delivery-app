@@ -7,10 +7,9 @@ export const create = async (req, res) => {
             address: req.body.address,
         });
 
-        const post = await doc.save();
-        console.log(post);
+        const shop = await doc.save();
 
-        res.json(post);
+        res.json(shop);
     } catch (err) {
         console.log(err);
     }

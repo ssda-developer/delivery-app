@@ -15,3 +15,7 @@ export const getFoods = async (shopId) => {
 
     return data;
 }
+
+export const setOrder = async (fields) => {
+    await instance.post(`/orders/create/`, fields);
+}

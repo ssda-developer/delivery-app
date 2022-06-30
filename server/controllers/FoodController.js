@@ -9,9 +9,9 @@ export const create = async (req, res) => {
             shop: req.body.shop,
         });
 
-        const post = await doc.save();
+        const food = await doc.save();
 
-        res.json(post);
+        res.json(food);
     } catch (err) {
         console.log(err);
     }

@@ -1,9 +1,8 @@
 import { useContext, useEffect, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { addDoc, collection } from 'firebase/firestore';
-import { firebaseDB } from '../firebase';
 import StoreContext from '../context/StoreContext';
 import Message from './Message';
+import { setOrder } from '../services/service';
 
 const UserForm = () => {
     const { shoppingList, totalPrice, updateShoppingList } = useContext(StoreContext);
@@ -19,15 +18,15 @@ const UserForm = () => {
         e.preventDefault();
 
         try {
-            await addDoc(collection(firebaseDB, 'orders'), {
+            await setOrder({
                 userInfo: {
                     name: e.target.elements.name.value,
                     email: e.target.elements.email.value,
                     phone: e.target.elements.phone.value,
                     address: e.target.elements.address.value,
-                    order: shoppingList,
-                    total: totalPrice,
-                }
+                },
+                foods: shoppingList,
+                total: totalPrice,
             });
             updateShoppingList([]);
             setShowMessage(true);
