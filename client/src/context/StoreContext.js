@@ -4,17 +4,17 @@ import data from '../data.json';
 const StoreContext = createContext({});
 
 export const StoreProvider = ({children}) => {
-    const [shopsData, setShopsData] = useState(data.shops);
+    const [shopsData, setShopsData] = useState([]);
     const updateShop = value => {
         setShopsData(value);
     }
 
-    const [foodsData, setFoodsData] = useState(shopsData[0].foods);
+    const [foodsData, setFoodsData] = useState([]);
     const updateFoods = value => {
         setFoodsData(value);
     }
 
-    const [currentShopsId, setCurrentShopsId] = useState(shopsData[0].id);
+    const [currentShopsId, setCurrentShopsId] = useState('1');
     const updateCurrentShopsId = value => {
         setCurrentShopsId(value);
     }

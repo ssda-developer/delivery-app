@@ -17,9 +17,9 @@ const ShoppingList = () => {
         ? <>
             <Row>
                 {
-                    shoppingList.map(food => {
+                    shoppingList.map((food, idx) => {
                         return (
-                            <Col md={6} key={food.id}>
+                            <Col md={6} key={idx}>
                                 <FoodCard isShowCount={true} food={food}/>
                             </Col>
                         )

@@ -9,9 +9,9 @@ const FoodsList = () => {
     return (
         <Row>
             {
-                foodsData.map(food => {
+                foodsData.map((food, idx) => {
                     return (
-                        <Col md={4} key={food.id}>
+                        <Col md={4} key={idx}>
                             <FoodCard food={food}/>
                         </Col>
                     )
