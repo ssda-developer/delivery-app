@@ -10,7 +10,7 @@ const app = express();
 const PORT = process.env.PORT || 4000;
 
 mongoose
-    .connect('mongodb+srv://admin:admin@cluster0.itofs.mongodb.net/delivery?retryWrites=true&w=majority')
+    .connect(process.env.MONGODB_URL || 'mongodb+srv://admin:admin@cluster0.itofs.mongodb.net/delivery?retryWrites=true&w=majority')
     .then(() => console.log('DB ok'))
     .catch((err) => console.log('DB not ok', err));
 

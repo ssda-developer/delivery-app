@@ -6,8 +6,8 @@ import { useContext, useEffect, useState } from 'react';
 import StoreContext from '../context/StoreContext';
 
 const ShopsPage = () => {
-    const { updateShop, updateFoods, updateCurrentShopsId } = useContext(StoreContext);
-    const [isLoading, setIsLoading] = useState(false);
+    const { currentShopsId, updateShop, updateFoods, updateCurrentShopsId } = useContext(StoreContext);
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         setIsLoading(true);
@@ -15,9 +15,10 @@ const ShopsPage = () => {
         getShops()
             .then(shopsList => {
                 const [firstShop] = shopsList;
+                const activeShopId = currentShopsId || firstShop._id;
 
-                getFoods(firstShop._id).then(foodList => {
-                    updateCurrentShopsId(firstShop._id);
+                getFoods(activeShopId).then(foodList => {
+                    updateCurrentShopsId(activeShopId);
                     updateShop(shopsList);
                     updateFoods(foodList);
 

@@ -9,11 +9,20 @@ const FoodCard = ({ food, isShowCount = false }) => {
     const [price, setPrice] = useState(food.price);
 
     const getNewShoppingList = value => {
-        return [...new Set([...shoppingList, Object.assign(food, { count: Number(value) })])];
+        const newShoppingList = [...shoppingList];
+        const [hasFood] = shoppingList.filter(el => el._id === food._id);
+
+        if (hasFood) {
+            hasFood.count = Number(value);
+        } else {
+            newShoppingList.push(Object.assign(food, { count: Number(value) }));
+        }
+
+        return newShoppingList;
     }
 
     const addHandler = () => {
-        const [hasFood] = shoppingList.filter(el => el.id === food.id);
+        const [hasFood] = shoppingList.filter(el => el._id === food._id);
         let countTemp = 0;
 
         if (hasFood) {
