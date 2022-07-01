@@ -17,11 +17,24 @@ mongoose
 app.use(express.json());
 app.use(cors());
 
+app.get('/', (req, res) => {
+    res.send(`
+        <h3>This is the server for the "<a href="https://github.com/ssda-developer/delivery-app">delivery-app</a>" application</h3>
+        <ul>
+            <li><a href="./shops">Show all shops</a></li>
+            <li><a href="./foods">Show all foods</a></li>
+            <li><a href="./orders">Show all orders</a></li>
+        </ul>
+    `);
+});
+
 app.post('/foods/create', FoodController.create);
-app.get('/foods/:shopId', FoodController.getAll);
+app.get('/foods/', FoodController.getAll);
+app.get('/foods/:shopId', FoodController.getAllFromShop);
 app.post('/shops/create', ShopController.create);
 app.get('/shops/', ShopController.getAll);
 app.post('/orders/create', OrderController.create);
+app.get('/orders', OrderController.getAll);
 
 app.listen(PORT, (err) => {
     if (err) {

@@ -18,6 +18,15 @@ export const create = async (req, res) => {
 };
 
 export const getAll = async (req, res) => {
+    try {
+        const foods = await FoodModel.find();
+        res.json(foods);
+    } catch (err) {
+        console.log(err);
+    }
+};
+
+export const getAllFromShop = async (req, res) => {
     const shopId = req.params.shopId;
     try {
         const foods = await FoodModel.find({

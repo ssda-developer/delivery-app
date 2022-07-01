@@ -15,3 +15,12 @@ export const create = async (req, res) => {
         console.log(err);
     }
 };
+
+export const getAll = async (req, res) => {
+    try {
+        const orders = await OrderModel.find();
+        res.json(orders);
+    } catch (err) {
+        console.log(err);
+    }
+};
